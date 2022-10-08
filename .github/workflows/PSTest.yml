@@ -30,5 +30,7 @@ jobs:
       - name: verschiedene Powershellscripte ausführen
         run: |
           Write-Host "Powershell läuft"
-          $PSVersion
-          "Der GithubPfad lautet: $Github_Workspace"
+          $PSVersionTable
+          "Der GithubPfad lautet: $env:Github_Workspace"
+          Get-Variable PS*
+          
