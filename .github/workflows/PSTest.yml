@@ -34,3 +34,4 @@ jobs:
           "Der GithubPfad lautet: $env:Github_Workspace"
           # Get-Variable PS*
           Get-DnsClientCache 
+          Get-Content Readme.md
