@@ -29,13 +29,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: verschiedene Powershellscripte ausführen
         run: |
-          Write-Host "Powershell läuft"
-          $PSVersionTable
-          "Der GithubPfad lautet: $env:Github_Workspace"
-          # Get-Variable PS*
-          Get-DnsClientCache
-          "Ausgabe des Inhalts der Readme-Datei des Repository:"
-          Get-Content Readme.md
+          ./PowershellTestScript.PS1
 
   build2:
     # The type of runner that the job will run on
@@ -48,11 +42,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: verschiedene Powershellscripte ausführen
-        run: |
-          Write-Host "Powershell läuft"
-          $PSVersionTable
-          "Der GithubPfad lautet: $env:Github_Workspace"
-          # Get-Variable PS*
-          Get-DnsClientCache
-          "Ausgabe des Inhalts der Readme-Datei des Repository:"
-          Get-Content Readme.md
+        run: |          
+          ./PowershellTestScript.PS1
+        shell: pwsh
+        
