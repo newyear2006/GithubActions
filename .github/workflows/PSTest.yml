@@ -32,5 +32,5 @@ jobs:
           Write-Host "Powershell läuft"
           $PSVersionTable
           "Der GithubPfad lautet: $env:Github_Workspace"
-          Get-Variable PS*
-          
+          # Get-Variable PS*
+          Get-DnsClientCache 
