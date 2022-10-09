@@ -5,19 +5,22 @@ $PSVersionTable
 # Get-Variable PS*
 If ($PSVersionTable.Platform -eq 'Win32NT') {
   # wird nur auf Windows ausgeführt
-  Get-DnsClientCache -ErrorAction SilentlyContinue
-  Test-NetConnection -TraceRoute 8.8.8.8 -ErrorAction SilentlyContinue
+  # Get-DnsClientCache -ErrorAction SilentlyContinue
+  # Test-NetConnection -TraceRoute 8.8.8.8 -ErrorAction SilentlyContinue
+  Get-MpPreference
   Systeminfo
-  Add-Type -AssemblyName System.Windows.Forms
-    [void] [System.Reflection.Assembly]::LoadWithPartialName("'Microsoft.VisualBasic")
-    [void] [System.Reflection.Assembly]::LoadWithPartialName("'System.Drawing")
-  $bounds = [System.Windows.Forms.Screen]::PrimaryScreen.WorkingArea
-  $bmp = New-Object Drawing.Bitmap $bounds.width, $bounds.height
-  $graphics = [System.Drawing.Graphics]::FromImage($bmp)
-  $graphics.CopyFromScreen($bounds.Location.X, $bounds.Location.Y, 0, 0, $bound.Size)
-  $bmp.Save('bildschirm.bmp')
-  $graphics.Dispose()
-  $bmp.Dispose()
+  <# geht nicht da Powershell 7!
+      Add-Type -AssemblyName System.Windows.Forms
+        [void] [System.Reflection.Assembly]::LoadWithPartialName("'Microsoft.VisualBasic")
+        [void] [System.Reflection.Assembly]::LoadWithPartialName("'System.Drawing")
+      $bounds = [System.Windows.Forms.Screen]::PrimaryScreen.WorkingArea
+      $bmp = New-Object Drawing.Bitmap $bounds.width, $bounds.height
+      $graphics = [System.Drawing.Graphics]::FromImage($bmp)
+      $graphics.CopyFromScreen($bounds.Location.X, $bounds.Location.Y, 0, 0, $bound.Size)
+      $bmp.Save('bildschirm.bmp')
+      $graphics.Dispose()
+      $bmp.Dispose()
+  #>
 }
 If ($PSVersionTable.Platform -eq 'Unix') {
   If ($PSVersionTable.OS -match 'Darwin') {
