@@ -8,7 +8,7 @@ If ($PSVersionTable.Platform -eq 'Win32NT') {
   # Get-DnsClientCache -ErrorAction SilentlyContinue
   # Test-NetConnection -TraceRoute 8.8.8.8 -ErrorAction SilentlyContinue
   Get-MpPreference
-  Get-MpStatus
+  Get-MpComputerStatus
   Systeminfo
   <# geht nicht da Powershell 7!
       Add-Type -AssemblyName System.Windows.Forms
