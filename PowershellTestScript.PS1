@@ -50,3 +50,6 @@ If ($PSVersionTable.Platform -eq 'Unix') {
 }
 "Ausgabe des Inhalts der Readme-Datei des Repository:"
 Get-Content ./README.md  # wichtig für Linux die Groß-/Kleinschreibung!
+"Anlage einer Test-Datei:"
+"Hallo Welt" | Set-Content ./Test.txt
+
