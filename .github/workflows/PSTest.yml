@@ -31,6 +31,11 @@ jobs:
         run: |
           ./PowershellTestScript.PS1
 
+      - uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: $GITHUB_WORKSPACE/Test.txt
+          
   build2:
     strategy:
       matrix:
@@ -51,4 +56,4 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: my-artifact
-          path: $GITHUB_WORKSPACE/test.txt
+          path: $GITHUB_WORKSPACE/Test.txt
