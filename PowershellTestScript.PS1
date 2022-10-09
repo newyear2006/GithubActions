@@ -1,6 +1,6 @@
 Write-Host "Powershell läuft"
 $PSVersionTable
-"Der GithubPfad lautet: $env:Github_Workspace"
+"Der GithubPfad lautet: $env:GITHUB_WORKSPACE"
 "akt. Pfad: $(pwd)"
 # Get-Variable PS*
 If ($PSVersionTable.Platform -eq 'Win32NT') {
