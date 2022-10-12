@@ -3,6 +3,24 @@ $PSVersionTable
 "Der GithubPfad lautet: $env:GITHUB_WORKSPACE"
 "akt. Pfad: $(pwd)"
 # Get-Variable PS*
+
+Get-Culture
+Get-UICulture
+Get-Date
+$culture = [System.Globalization.CultureInfo]::GetCultureInfo('de-DE')
+"Culture: $culture"
+function Set-Culture([System.Globalization.CultureInfo] $culture)
+{
+    [System.Threading.Thread]::CurrentThread.CurrentUICulture = $culture
+    [System.Threading.Thread]::CurrentThread.CurrentCulture = $culture
+}
+Set-Culture('de-DE')
+Get-Culture
+Get-UICulture
+Get-Date
+$culture = [System.Globalization.CultureInfo]::GetCultureInfo('de-DE')
+"Culture: $culture"
+
 If ($PSVersionTable.Platform -eq 'Win32NT') {
   # wird nur auf Windows ausgeführt
   # Get-DnsClientCache -ErrorAction SilentlyContinue
