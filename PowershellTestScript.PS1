@@ -4,6 +4,9 @@ $PSVersionTable
 "akt. Pfad: $(pwd)"
 # Get-Variable PS*
 
+Get-PSDrive
+"==================================================="
+
 Get-Culture
 Get-UICulture
 Get-Date
@@ -20,6 +23,7 @@ Get-UICulture
 Get-Date
 $culture = [System.Globalization.CultureInfo]::GetCultureInfo('de-DE')
 "Culture: $culture"
+"==================================================="
 
 If ($PSVersionTable.Platform -eq 'Win32NT') {
   # wird nur auf Windows ausgeführt
@@ -66,6 +70,7 @@ If ($PSVersionTable.Platform -eq 'Unix') {
     cat /proc/cpuinfo
   }
 }
+"==================================================="
 "Ausgabe des Inhalts der Readme-Datei des Repository:"
 Get-Content ./README.md  # wichtig für Linux die Groß-/Kleinschreibung!
 "Anlage einer Test-Datei:"
