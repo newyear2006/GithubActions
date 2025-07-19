@@ -21,3 +21,5 @@ Tipps:
 ```Powershell
 $env:VariablenName
 ```
+
+Dann wäre da noch das Thema Github Actions Secrets und wo der Unterschied zwischen Environment- und Repository-Secrets liegt: https://stackoverflow.com/questions/65957197/difference-between-githubs-environment-and-repository-secrets, die Anleitung https://docs.github.com/de/actions/how-tos/writing-workflows/choosing-what-your-workflow-does/using-secrets-in-github-actions ist da nicht so eindeutig.
